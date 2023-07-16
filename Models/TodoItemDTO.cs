@@ -1,5 +1,5 @@
 ﻿using System;
-namespace TodoApi.Models;
+namespace TodoApp.Models;
 
 public class TodoItemDTO
 {
