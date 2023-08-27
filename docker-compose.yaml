@@ -1,8 +1,19 @@
 version: "3.8"
 
-services: 
+services:
+  sql-server:
+    container_name: sql-server
+    build: sql-server
+    ports:
+      - "1433:1433"
+    environment:
+      ACCEPT_EULA: Y
+      SA_PASSWORD: reallyStrongPwd123
+
   todo-app:
     container_name: todo-app
     build: .
     ports:
       - "8080:80"
+    depends_on: 
+      - sql-server
